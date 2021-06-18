@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<div class="jumbotron">
+  <h1>Welcome to our Health Donation Page!</h1> <br>
+  <h3>Would you like to donate to our agency?</h3>
+  {# THIS IS A TEST KEY. TO FIND YOUR OWN KEY, LOG IN TO YOUR STRIPE ACCOUNT
+  THEN GO TO: https://stripe.com/docs/quickstart #}
+  <form action="{{url_for('donation.payment')}}" method="POST">
+    <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key={{public_key}}
+      data-amount="500"
+      data-name="Health Donation"
+      data-description="Please don't enter your real info"
+      data-locale="auto"
+      data-zip-code="true">
+    </script>
+  </form>
+
+</div>
+
+{% endblock %}

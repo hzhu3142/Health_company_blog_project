@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class = 'jumbotron'>
+    <h1>About this project</h1>
+    <ul>
+      <li>This website could be used for a company blog, customer feedbacks. and donation purpose.</li>
+      <li>Multiple users can log in, create blog posts, and update or delete their existing blog posts, and update their headshot and username in profiles.</li>
+      <li>This website was developed with Python and Flask framework. The frond end is HTTP, CSS, Bootstrap.</li>
+      <li>It is displayed on Heroku platform, and all the data is stored in SQLite.</li>
+      <li>For donation payments, Stripe APIs are implemented in the code. For security, user login/register and authentication check are added.</li>
+      <li>For customer convenience, flask-dance library is used to add in OAuth(Open Authorization) backends for the web (register with Google account).</li>
+      <li>For more information about the project, please click
+      <a href="https://github.com/hzhu3142/Health_company_blog_project"><strong>Here</strong></a> to my GitHub.</li>
+    </ul>
+  </div>
+{% endblock %}

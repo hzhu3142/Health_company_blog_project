@@ -1,0 +1,31 @@
+{% for mess in get_flashed_messages() %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Great!</strong> {{mess}}.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+{% endfor %}
+
+
+{% extends "base.html" %}
+{% block content %}
+  <div class = 'jumbotron'>
+    <form method="POST">
+    {{form.hidden_tag()}}
+    {{form.email.label}}&nbsp;{{form.email}}<br>
+    {{form.password.label}}&nbsp;{{form.password}}<br>
+    {{form.submit()}}
+  </form>
+    <br>
+    <p> Don't have an account? <a href="{{url_for('users.register')}}">Create one.</a></p>
+
+
+    <p> ------Or log in with other accounts ------------</p>
+    <a href="{{url_for('users.oalogin_google')}}"><img src="/static/login/google.png" width="30" height="30"></a>
+    &nbsp;&nbsp;
+    <img src="/static/login/facebook.png" width="30" height="30">
+
+
+
+  </div>
+{% endblock %}
